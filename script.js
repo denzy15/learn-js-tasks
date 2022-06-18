@@ -1,4 +1,3 @@
 //Task 1
-let name = 'Джон';
-let admin = name;
-alert(admin);
+let name = prompt('Введите ваше имя: ', '');
+alert(name);
