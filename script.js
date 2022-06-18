@@ -1,32 +1,29 @@
-//Task 2
-let jsName = prompt('Какое "официальное" название JavaScript?', "");
-if (jsName == "ECMAScript") {
-  alert("Верно!");
+//Task 6
+
+/*if (age >= 14 && age <= 90) console.log('В диапазоне');*/
+
+//Task 7
+
+/*if (!(age >= 14 && age <= 90)) console.log('Вне диапазона');
+if (age < 14 || age > 90) console.log('Вне диапазона');*/
+
+//Task 9
+
+let user = prompt("Ваш логин?", "");
+
+if (user === null || user == '') {
+  alert("Отменено");
+} else if (user === "Админ") {
+  let password = prompt("Ваш пароль?", "");
+
+  if (password === null || password == '') {
+    alert("Отменено");
+  }
+  else if (password === "Я Главный") {
+    alert("Здравствуйте!");
+  } else {
+    alert("Неверный пароль");
+  }
 } else {
-  alert("Не знаете? ECMAScript!");
+  alert("Я вас не знаю");
 }
-
-//Task 3
-let num = prompt("Введите число", 0);
-if (num > 0) {
-  alert(1);
-} else if (num < 0) {
-  alert(-1);
-} else {
-  alert(0);
-}
-
-//Task 4
-
-let result = a + b < 4 ? "Мало" : "Много";
-
-//Task 5
-
-let message =
-  login == "Сотрудник"
-    ? "Привет"
-    : login == "Директор"
-    ? "Здравствуйте"
-    : login == ""
-    ? "Нет логина"
-    : "";
