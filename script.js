@@ -1,40 +1,31 @@
-//Task 4
-
-/*for (let i = 2; i <= 10; i++) {
-  if (i % 2 == 0) {
-    alert(i);
-  }
-}*/
-
-//Task 5
-
-/*let i = 0;
-while (i < 3) {
-  alert(`number ${i}!`);
-  ++i;
-}*/
-
-//Task 6
-
-/*while (true) {
-	let num = prompt('Введите число больше 100', 101);
-	debugger
-	if (+num >= 100 || num === null) {
-		break;
-	}
-}*/
-
-//Task 7
-
-let num = +prompt("Введите число", 2);
-
-if (num > 1) {
-  debugger;
-  metka: for (let i = 2; i <= num; i++) {
-    for (let j = 2; j < i; j++) {
-      if (i % j == 0) continue metka;
-    }
-    alert(i);
-  }
+//Task 1
+if (browser === 'Edge') {
+  alert("You've got the Edge!");
+} else if (
+  browser === 'Chrome' ||
+  browser === 'Firefox' ||
+  browser === 'Safari' ||
+  browser === 'Opera'
+) {
+  alert('Okay we support these browsers too');
+} else {
+  alert('We hope that this page looks ok!');
 }
 
+//Task 2
+
+let number = +prompt('Введите число между 0 и 3', 0);
+switch (number) {
+  case 0:
+    alert('Вы ввели число 0');
+    break;
+  case 1:
+    alert('Вы ввели число 1');
+    break;
+  case 2:
+  case 3:
+    alert('Вы ввели число 2, а может и 3');
+	break;
+  default:
+    break;
+}
