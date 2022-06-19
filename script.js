@@ -1,30 +1,40 @@
-<<<<<<< HEAD
-// Task 9
+//Task 4
 
-let login = prompt("Кто там?", "");
-
-if (login === "" || login === null) {
-  alert("Отменено");
-} else if (login === "Админ") {
-  let password = prompt("Пароль?", "");
-
-  if (password === "Я главный") {
-    alert("Здравствуйте!");
-  } else if (password === "" || password === null) {
-    alert("Отменено");
-  } else {
-    alert("Неверный пароль");
+/*for (let i = 2; i <= 10; i++) {
+  if (i % 2 == 0) {
+    alert(i);
   }
-} else {
-  alert("Я вас не знаю");
-}
-=======
+}*/
+
+//Task 5
+
+/*let i = 0;
+while (i < 3) {
+  alert(`number ${i}!`);
+  ++i;
+}*/
+
 //Task 6
-if (age >= 14 && age <= 90) console.log('В диапазоне');
+
+/*while (true) {
+	let num = prompt('Введите число больше 100', 101);
+	debugger
+	if (+num >= 100 || num === null) {
+		break;
+	}
+}*/
 
 //Task 7
 
-if (!(age >= 14 && age <= 90)) console.log('Вне диапазона');
-if (age < 14 || age > 90) console.log('Вне диапазона');
+let num = +prompt("Введите число", 2);
 
->>>>>>> 43df7cb048b8f030d6978926c149f9bb117dd1be
+if (num > 1) {
+  debugger;
+  metka: for (let i = 2; i <= num; i++) {
+    for (let j = 2; j < i; j++) {
+      if (i % j == 0) continue metka;
+    }
+    alert(i);
+  }
+}
+
