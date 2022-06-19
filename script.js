@@ -1,27 +1,19 @@
+// Task 9
 
-let user = prompt("Ваш логин?", "");
+let login = prompt("Кто там?", "");
 
-if (user === null || user == '') {
+if (login === "" || login === null) {
   alert("Отменено");
-} else if (user === "Админ") {
-  let password = prompt("Ваш пароль?", "");
+} else if (login === "Админ") {
+  let password = prompt("Пароль?", "");
 
-  if (password === null || password == '') {
-    alert("Отменено");
-  }
-  else if (password === "Я Главный") {
+  if (password === "Я главный") {
     alert("Здравствуйте!");
+  } else if (password === "" || password === null) {
+    alert("Отменено");
   } else {
     alert("Неверный пароль");
   }
 } else {
   alert("Я вас не знаю");
 }
-//Task 6
-if (age >= 14 && age <= 90) console.log('В диапазоне');
-
-//Task 7
-
-if (!(age >= 14 && age <= 90)) console.log('Вне диапазона');
-if (age < 14 || age > 90) console.log('Вне диапазона');
-
