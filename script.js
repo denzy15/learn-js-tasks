@@ -1,31 +1,30 @@
-//Task 1
-if (browser === 'Edge') {
-  alert("You've got the Edge!");
-} else if (
-  browser === 'Chrome' ||
-  browser === 'Firefox' ||
-  browser === 'Safari' ||
-  browser === 'Opera'
-) {
-  alert('Okay we support these browsers too');
-} else {
-  alert('We hope that this page looks ok!');
-}
-
 //Task 2
 
-let number = +prompt('Введите число между 0 и 3', 0);
-switch (number) {
-  case 0:
-    alert('Вы ввели число 0');
-    break;
-  case 1:
-    alert('Вы ввели число 1');
-    break;
-  case 2:
-  case 3:
-    alert('Вы ввели число 2, а может и 3');
-	break;
-  default:
-    break;
+//function checkAge(age) {
+//  return age > 18 ? true : confirm('Родители разрешили?');
+//}
+
+function checkAge(age) {
+  return age > 18 || confirm('Родители разрешили?');
 }
+
+//Task 3
+
+function min(a, b) {
+  return a > b ? b : a;
+}
+
+//Task 4 
+
+function pow(x, n) {
+  let result = 1;
+  for (let i = 0; i < n; i++) {
+    result *= x;
+  }
+  return result;
+}
+
+let x = prompt('Введите х', 1);
+let n = prompt('Введите n', 1);
+
+if (n >= 1) alert(pow(x, n));
