@@ -1,31 +1,26 @@
 //Task 1
 
+function ucFirst(str) {
+  if (str) return str[0].toUpperCase() + str.slice(1);
+}
 
-//let a = +prompt("a?", 0);
-//let b = +prompt("b?", 0);
-//alert(a + b);
+//Task 2
 
+function checkSpam(str){
+  return str.toLowerCase().includes('viagra') ||  str.toLowerCase().includes('xxx');
+}
 
 //Task 3
 
-function readNumber() {
-  let num;
-  do {
-    num = prompt("Введите число", 0);
-    if (num === null || num === "") return null;
-  } while (!isFinite(num));
-
-  return +num;
+function truncate(str, maxlength){
+  if (str.length > maxlength) {
+    return str.slice(0, maxlength - 1) + '…';
+  }
+  return str
 }
 
-//Task 5
+//Task 4  
 
-function random(min, max) {
-  return min + Math.random() * (max - min);
-}
-
-//Task 6
-
-function randomInteger(min, max) {
-  return Math.floor(min + Math.random() * (max + 1 - min));
+function extractCurrencyValue(str){
+  return +str.slice(1)
 }
