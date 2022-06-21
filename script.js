@@ -1,23 +1,23 @@
 //task 1
 
-function unique(arr) {
-  let set = new Set(arr);
-  return Array.from(set);
+function sumSalaries(salaries) {
+  let sum = 0;
+  for (const salary of Object.values(salaries)) {
+    sum += salary;
+  }
+  return sum;
 }
-
-let values = ["Hare", "Krishna", "Hare", "Krishna",
-  "Krishna", "Krishna", "Hare", "Hare", ":-O"
-];
 
 //task 2
 
-let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+let user = {
+  name: 'John',
+  age: 30
+};
 
-function aclean(arr){
-  let set = new Set();
-  arr.forEach(str => set.add(str.toLowerCase().split('').sort().join('')));
-  return Array.from(set);
+function count(obj){
+  return Object.entries(obj).length;
 }
 
-//Task 3
+console.log(count(user));
 
