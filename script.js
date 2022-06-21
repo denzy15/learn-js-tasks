@@ -1,83 +1,71 @@
-//task 1
+//task 5
 
-function sumTo(n) { //циклом
-  let sum = 0;
-  for (let i = 1; i <= n; i++) {
-    sum += i;
-  }
-  return sum;
+function sum(a) {
+  return function (b) {
+    return a + b;
+  };
 }
 
-function sumTo(n) { //рекурсия
-  if (n === 1) return 1;
-  return n + sumTo(n - 1);
-}
-
-function sumTo(n) { //арифм. прогрессия
-  return ((1 + n) / 2) * n;
-}
-
-//task 2
-
-function factorial(n) {
-  if (n === 1) return n;
-  return n * factorial(n - 1);
-}
-
-//task 3
-
-function fib(n) {
-  return n <= 1 ? n : fib(n - 1) + fib(n - 2);
-}
-
-//task 4
-
-let list = {
-  value: 1,
-  next: {
-    value: 2,
-    next: {
-      value: 3,
-      next: {
-        value: 4,
-        next: null
-      }
-    }
-  }
-};
-
-function printList(list) { // цикл
-  while(list) {
-    console.log(list.value);
-    list = list.next;
-  }
-}
-
-function printList(list) { //рекурсия
-  console.log(list.value);
-  list.next ? printList(list.next)  : null;
-}
+//console.log(sum(6)(9))
 
 //task 5
 
-function printReverseList(list) { // цикл
-  let values = [];
-
-  while(list) {
-    values.push(list.value);
-    list = list.next;
-  }
-  values.reverse().forEach(v => console.log(v));
+function inBetween(a, b) {
+  return function (num) {
+    if (num >= a && num <= b) return true;
+    return false;
+  };
 }
 
-
-
-function printReverseList(list) { // рекурсия
-  
-  if (list.next) {
-    console.log('некст ещё есть!!!');
-    
-    printReverseList(list.next);
-  }
- console.log(list.value);
+function inArray(arr) {
+  return function (num) {
+    return arr.includes(num);
+  };
 }
+
+/*let arr = [1, 2, 3, 4, 5, 6, 7];
+
+console.log(arr.filter(inBetween(3, 6))); // 3,4,5,6
+
+console.log(arr.filter(inArray([1, 2, 10]))); // 1,2*/
+
+//task 6
+
+function byField(key) {
+  return function (a, b) {
+    return a[key] > b[key] ? 1 : -1;
+  };
+}
+
+let users = [
+  { name: "John", age: 20, surname: "Johnson" },
+  { name: "Pete", age: 18, surname: "Peterson" },
+  { name: "Ann", age: 19, surname: "Hathaway" },
+];
+
+/*
+console.log(users.sort(byField("name")));
+console.log(users.sort(byField("age")));
+*/
+
+//task 7
+
+function makeArmy() {
+  let shooters = [];
+
+  for (let i = 0; i < 10; i++) {
+    let shooter = function () {
+      // функция shooter
+      console.log(i);
+      // должна выводить порядковый номер
+    };
+    shooters.push(shooter);
+    debugger;
+  }
+  return shooters;
+}
+
+let army = makeArmy();
+
+army[0](); // у 0-го стрелка будет номер 10
+army[5]();
