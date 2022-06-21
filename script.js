@@ -1,23 +1,24 @@
 //task 1
 
-function sumSalaries(salaries) {
-  let sum = 0;
-  for (const salary of Object.values(salaries)) {
-    sum += salary;
-  }
-  return sum;
-}
+let user = { name: "John", years: 30 };
+
+let {name, years : age, isAdmin = false} = user
 
 //task 2
 
-let user = {
-  name: 'John',
-  age: 30
-};
-
-function count(obj){
-  return Object.entries(obj).length;
+function topSalary(salaries){
+  if (Object.entries(salaries).length === 0) {
+    return null;
+  }
+  let maxSalary = 0;
+  let maxSalaryName;
+  for (const [name, salary] of Object.entries(salaries)) {
+    if (salary > maxSalary) {
+      maxSalary = salary;
+      maxSalaryName = name;
+    }
+  }
+  return maxSalaryName;
 }
 
-console.log(count(user));
-
+console.log(topSalary({}));
