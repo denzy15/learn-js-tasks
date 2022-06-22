@@ -1,12 +1,30 @@
-function User(name) {
-  this.name = name;
-  console.log(name);
+//task 1
+/*if (!Function.prototype.defer) {
+  Function.prototype.defer = function(ms){
+    setTimeout(this, ms);
+  }
 }
 
+function f() {
+  alert("Hello!");
+}
 
-let obj = new User("John");
+f.defer(1000);*/
 
-//Если свойство "User.prototype.constructor" не будет перезаписано, то всё будет работать правильно 
-//User.prototype.constructor = {};
+//task 2
 
-let obj2 = new obj.constructor("Pete");
+if (!Function.prototype.defer) {
+  Function.prototype.defer = function (ms) {
+    let func = this;
+    function wrapper(...args){
+      setTimeout(() => func.apply(this, args), ms);
+    }
+    return wrapper
+  };
+}
+
+function f(a, b) {
+  console.log(a + b);
+}
+
+f.defer(1000)(1, 2);
