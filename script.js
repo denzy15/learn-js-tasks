@@ -1,52 +1,24 @@
 //task 1
 
-function makeCounter() {
-  let count = 0;
-  function counter() {
-    return count++;
-  }
-  counter.set = function (n) {
-    count = n;
-  };
-  counter.decrease = () => {
-    return count--;
-  };
-
-  return counter;
+function printNumbers(from, to) { //setInterval
+  const interval = setInterval(() => {
+    console.log(from);
+    if (from === to) {
+      clearInterval(interval);
+    }
+    from++;
+  }, 1000);
 }
 
-/*let counter = makeCounter();
+/*function printNumbers(from, to) { //setTimeout
+  setTimeout(function setTm() {
+    console.log(from);
+    if (from < to) {
+      setTimeout(setTm, 1000);
+    }
+    from++;
+  }, 1000);
+}*/
 
-console.log(counter()); // 0
-console.log(counter()); // 1
 
-counter.set(10); // установить новое значение счётчика
-
-console.log(counter()); // 10
-
-counter.decrease(); // уменьшить значение счётчика на 1
-
-console.log(counter()); // 10 (вместо 11)
-*/
-
-//task 2
-
-function sum(a) {
-  let currentSum = a;
-
-  function f(b) {
-    currentSum += b;
-    return f;
-  }
-
-  f.toString = function () {
-    return currentSum;
-  };
-
-  return f;
-}
-
-alert(sum(2)(9));
-
-//let x = sum(1)(2);
-//console.log( x().toString() );
+printNumbers(2, 5);
