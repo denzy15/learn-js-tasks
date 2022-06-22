@@ -1,12 +1,18 @@
-//task 1
-
-class Rabbit extends Object {
-  constructor(name) {
+class FormatError extends SyntaxError{
+  constructor(message){
     super();
-    this.name = name;
+    this.message = message;
+    this.name = "FormatError";
+    
   }
+  
 }
 
-let rabbit = new Rabbit("Кроль");
+let err = new FormatError("ошибка форматирования");
 
-alert(rabbit.hasOwnProperty("name"));
+alert( err.message ); // ошибка форматирования
+alert( err.name ); // FormatError
+alert( err.stack ); // stack
+
+alert( err instanceof FormatError ); // true
+alert( err instanceof SyntaxError ); // true (потому что наследует от SyntaxError)
