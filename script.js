@@ -1,22 +1,29 @@
-//task 1
-
-let dictionary = Object.create(null);
-
-Object.defineProperty(dictionary, 'toString',{
-  value(){
-    return Object.keys(dictionary).join(',');
-  },
-  enumerable: false
-})
-
-// добавляем немного данных
-dictionary.apple = "Apple";
-dictionary.__proto__ = "test"; // здесь __proto__ -- это обычный ключ
-
-// только apple и __proto__ выведены в цикле
-for(let key in dictionary) {
-  alert(key); // "apple", затем "__proto__"
+class Clock {
+  constructor({ template }) {
+    this.template = template;
+  }
+  render() {
+    this.date = new Date();
+    let hours = this.date.getHours();
+    if (hours < 10) hours = `0${hours}`;
+    let mins = this.date.getMinutes();
+    if (mins < 10) mins = `0${mins}`;
+    let secs = this.date.getSeconds();
+    if (secs < 10) secs = `0${secs}`;
+    let output = this.template
+      .replace("h", hours)
+      .replace("m", mins)
+      .replace("s", secs);
+    console.log(output);
+  }
+  stop() {
+    clearInterval(this.timer);
+  }
+  start() {
+    this.render();
+    this.timer = setInterval(() => this.render(), 1000);
+  }
 }
 
-// ваш метод toString в действии
-alert(dictionary); // "apple,__proto__"
+let clock = new Clock({ template: "h:m:s" });
+clock.start();
