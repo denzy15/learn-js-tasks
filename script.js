@@ -1,43 +1,49 @@
+//task 2
+
+let head = {
+  glasses: 1,
+};
+
+let table = {
+  pen: 3,
+  __proto__: head,
+};
+
+let bed = {
+  sheet: 1,
+  pillow: 2,
+  __proto__: table,
+};
+
+let pockets = {
+  money: 2000,
+  __proto__: bed,
+};
+
+//console.log(pockets.pen);
+
 //task 4
 
-/*function askPassword(ok, fail) {
-  let password = prompt("Password?", '');
-  if (password == "rockstar") ok();
-  else fail();
-}
+let hamster = {
+  stomach: [],
 
-let user = {
-  name: 'Вася',
-
-  loginOk() {
-    alert(`${this.name} logged in`);
-  },
-
-  loginFail() {
-    alert(`${this.name} failed to log in`);
-  },
-
-};
-
-askPassword(user.loginOk.bind(user), user.loginFail.bind(user));*/
-
-//task 5
-
-function askPassword(ok, fail) {
-  let password = prompt("Password?", "");
-  if (password == "rockstar") ok();
-  else fail();
-}
-
-let user = {
-  name: "John",
-
-  login(result) {
-    alert(this.name + (result ? " logged in" : " failed to log in"));
+  eat(food) {
+    this.stomach.push(food);
   },
 };
 
-askPassword(
-  () => user.login(true),
-  () => user.login(false)
-);
+let speedy = {
+  stomach: [],
+  __proto__: hamster,
+};
+
+let lazy = {
+  stomach: [],
+  __proto__: hamster,
+};
+
+
+speedy.eat("apple");
+console.log(speedy.stomach); // apple
+
+console.log(lazy.stomach); // empty
