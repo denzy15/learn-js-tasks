@@ -1,30 +1,22 @@
 //task 1
-/*if (!Function.prototype.defer) {
-  Function.prototype.defer = function(ms){
-    setTimeout(this, ms);
-  }
+
+let dictionary = Object.create(null);
+
+Object.defineProperty(dictionary, 'toString',{
+  value(){
+    return Object.keys(dictionary).join(',');
+  },
+  enumerable: false
+})
+
+// добавляем немного данных
+dictionary.apple = "Apple";
+dictionary.__proto__ = "test"; // здесь __proto__ -- это обычный ключ
+
+// только apple и __proto__ выведены в цикле
+for(let key in dictionary) {
+  alert(key); // "apple", затем "__proto__"
 }
 
-function f() {
-  alert("Hello!");
-}
-
-f.defer(1000);*/
-
-//task 2
-
-if (!Function.prototype.defer) {
-  Function.prototype.defer = function (ms) {
-    let func = this;
-    function wrapper(...args){
-      setTimeout(() => func.apply(this, args), ms);
-    }
-    return wrapper
-  };
-}
-
-function f(a, b) {
-  console.log(a + b);
-}
-
-f.defer(1000)(1, 2);
+// ваш метод toString в действии
+alert(dictionary); // "apple,__proto__"
