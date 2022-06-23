@@ -1,9 +1,13 @@
 //task 1
-const listLis = document.querySelectorAll("li");
-for (let li of listLis) {
-  let name = li.firstChild.textContent.replace(/\s+/g, "");
-  let count = li.getElementsByTagName("li").length;
-  console.log(`${name}: ${count}`);
+
+let div = document.querySelector("[data-widget-name]");
+
+//task 2
+
+let links = document.querySelector("ul").querySelectorAll("a");
+for (const link of links) {
+  let attr = link.getAttribute("href");
+  if (!link.href.startsWith("http://internal.com") && attr.includes("://")) {
+    link.style.color = "orange";
+  }
 }
-
-
