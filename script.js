@@ -1,18 +1,21 @@
-class FormatError extends SyntaxError{
-  constructor(message){
-    super();
-    this.message = message;
-    this.name = "FormatError";
-    
-  }
-  
+//task 1
+
+//элемент <div> =>
+
+/*console.log(document.body.firstElementChild);
+
+//<ul> =>
+
+console.log(document.body.firstElementChild.nextElementSibling);
+
+//второй <li> (с именем Пит) =>
+
+console.log(document.body.firstElementChild.nextElementSibling.lastElementChild);*/
+
+//task 3
+
+let table = document.body.firstElementChild;
+
+for (let i = 0; i < table.rows.length; i++) {
+  table.rows[i].cells[i].style.backgroundColor  = 'red';  
 }
-
-let err = new FormatError("ошибка форматирования");
-
-alert( err.message ); // ошибка форматирования
-alert( err.name ); // FormatError
-alert( err.stack ); // stack
-
-alert( err instanceof FormatError ); // true
-alert( err instanceof SyntaxError ); // true (потому что наследует от SyntaxError)
