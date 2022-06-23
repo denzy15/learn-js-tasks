@@ -1,21 +1,24 @@
-//task 1
+//Таблицу с id="age-table"
+const ageTable = document.querySelector("#age-table");
 
-//элемент <div> =>
+//Все элементы label внутри этой таблицы (их три)
+const labels = ageTable.getElementsByTagName("label");
 
-/*console.log(document.body.firstElementChild);
+//Первый td в этой таблице (со словом «Age»).
+const td = ageTable.querySelector("td");
 
-//<ul> =>
+//Форму form с именем name="search".
+const form = document.querySelector("form");
 
-console.log(document.body.firstElementChild.nextElementSibling);
+//Инпуты в form
+let inputs = form.getElementsByTagName('input');
 
-//второй <li> (с именем Пит) =>
+//Первый input в этой форме.
+const firstInput = inputs[0];
 
-console.log(document.body.firstElementChild.nextElementSibling.lastElementChild);*/
+//Последний input в этой форме.
+const secondInput = inputs[inputs.length-1];
 
-//task 3
 
-let table = document.body.firstElementChild;
 
-for (let i = 0; i < table.rows.length; i++) {
-  table.rows[i].cells[i].style.backgroundColor  = 'red';  
-}
+
