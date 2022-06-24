@@ -1,20 +1,64 @@
-.block {
-	height: 150px;
-	border: 1px solid #CCC;
-	background: #eee;
-	box-sizing: border-box;
+/* Task 1 */
+
+input[type="checkbox"]:not(:checked) {
+  /* Выбрать input типа checkbox (не отмеченный) */
 }
 
-.spacer {
-	margin-left: 20%;
-	margin-right: 20%;
-	margin-top: 15px;
-	margin-bottom: 15px;
-	height: 80%;
-	border: 1px solid black;
-	background: #FFF;
+input[type="checkbox"]:checked {
+  /* Выбрать input типа checkbox. */
 }
 
-input::placeholder{
-	color: red;
+#message + #messages li {
+  /*Найти все элементы с id=message или message-*.*/
+}
+
+#messages li:not(:last-child) {
+  /*Найти все элементы с id=message-*.*/
+}
+
+a[href$=".zip"] {
+  /* Найти все ссылки с расширением href="...zip" . */
+}
+
+[data-action~="delete"] {
+  /*Найти все элементы с атрибутом data-action, содержащим delete в списке (через пробел).*/
+}
+
+[data-action]:not([data-action~="delete"]) {
+  /* Найти все элементы, у которых ЕСТЬ атрибут data-action, но он НЕ содержит delete в списке (через пробел). */
+}
+
+#messages li:nth-child(2n) {
+  /* Выбрать все чётные элементы списка #messages. */
+}
+
+#widget-title + * {
+  /*Выбрать один элемент сразу за заголовком h3#widget-title на том же уровне вложенности.*/
+}
+
+#widget-title ~ a {
+  /*Выбрать все ссылки, следующие за заголовком h3#widget-title на том же уровне вложенности.*/
+}
+
+#messages li:last-child a {
+  /*Выбрать ссылку внутри последнего элемента списка #messages.*/
+}
+
+
+/* Task 2 */
+
+body {
+	font: 14px/1.5 serif;
+}
+
+/*
+ul li:not(:last-child){
+	margin-bottom: 1.5em;
+}*/
+
+
+/* Task 3 */
+
+ul li:nth-child(2n):not(:last-child){
+	margin-bottom: 1.5em;
 }
