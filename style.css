@@ -1,61 +1,9 @@
-/* Task 2 */
-
-li {
-  list-style: none;
-}
-
-.icon {
-  float: left;
-  margin-right: 10px;
-  cursor: pointer;
-}
-
-/* task 2*/
-
-/*.nav {
-  border: 1px solid #000;
-  height: 40px;
-  width: 80%;
-  margin: auto;
-}
-
-.nav img {
-  cursor: pointer;
-}
-
-.left {
-  float: left;
-}
-
-.pages {
-  text-align: center;
-  margin: 0;
-	padding: 10px 0;
-}
-
-.pages li{
-	display: inline;
-	margin: 0 5px;
-	cursor: pointer;
-}
-
-.right {
-  float: right;
-}*/
-
-
-/* Task 4 */
-.left {
-	float: left;
-	width: 30%;
-	background: #aef;
-}
-
-.right {
-	float: right;
-	width: 70%;
-	background: tan;
-	box-sizing: border-box;
-	border-left: 3px solid #000;
-	padding-left: 10px;
+#box {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 4, 255, 0.555);
+  left: 0;
+  top: 0;
+  z-index: 2;
 }
