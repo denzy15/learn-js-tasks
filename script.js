@@ -1,27 +1,20 @@
-function showNotification(options) {
-  const div = document.createElement("div");
-  div.innerHTML = options.html;
-  div.className = options.className;
-  div.style.cssText = `
-    position: absolute;
-    top: ${options.top}px;
-    right: ${options.right}px;
-    width: 60%;
-    height: 50px;
-    background-color: green;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  `;
-  document.body.append(div);
-  setTimeout(() => {
-    div.style.display = "none";
-  }, 1500);
+//task 1
+
+function scrollBottom(elem) {
+  return elem.scrollHeight - elem.scrollTop - elem.clientHeight;
 }
 
-showNotification({
-  top: 10,
-  right: 10,
-  html: "Hello!",
-  className: "welcome",
-});
+//task 2
+
+//чтобы появилась полоса прокрутки
+/*document.getElementById('lorem').style.height = '200vh';
+
+console.log(window.innerWidth - document.documentElement.clientWidth)*/
+
+//task 3
+
+const ball = document.querySelector('#ball');
+const field = document.querySelector('#field');
+
+ball.style.left = field.clientWidth / 2 - ball.clientWidth / 2 + 'px';
+ball.style.top = field.clientHeight / 2 - ball.clientHeight / 2 + 'px';
